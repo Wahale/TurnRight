@@ -116,7 +116,7 @@ public class GameController : MonoBehaviour
     }
 
     private void OnRoadCollision(Collision2D collision) {
-        StartNewGame();
+        CallRestartGame();
         Debug.Log("GameIsOver!");
         MakeSave();
         GameEnd?.Invoke();

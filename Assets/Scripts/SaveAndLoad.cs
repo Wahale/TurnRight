@@ -48,22 +48,16 @@ public class SaveAndLoad : MonoBehaviour
 [System.Serializable]
 public class Save
 {
-    private int _totalLaps;
-    private int _totalTurns;
-    private int _totalLines;
-    private int _totalDies;
-    private int _totalRestart;
+    public int TotalLaps;
+    public int TotalTurns;
+    public int TotalLines;
+    public int TotalDies;
+    public int TotalRestart;
 
-    private int _maxTurnsByGame;
-    private int _maxLinesByGame;
-    private int _maxLapsByGame;
+    public int MaxTurnsByGame;
+    public int MaxLinesByGame;
+    public int MaxLapsByGame;
 
-    public int TotalLaps { get => _totalLaps; set => _totalLaps = value; }
-    public int TotalTurns { get => _totalTurns; set => _totalTurns = value; }
-    public int TotalLines { get => _totalLines; set => _totalLines = value; }
-    public int TotalDies { get => _totalDies; set => _totalDies = value; }
-    public int TotalRestart { get => _totalRestart; set => _totalRestart = value; }
-    public int MaxTurnsByGame { get => _maxTurnsByGame; set => _maxTurnsByGame = value; }
-    public int MaxLinesByGame { get => _maxLinesByGame; set => _maxLinesByGame = value; }
-    public int MaxLapsByGame { get => _maxLapsByGame; set => _maxLapsByGame = value; }
+    public bool SettingsVibration;
+    public bool SettingsMusic;
 }
