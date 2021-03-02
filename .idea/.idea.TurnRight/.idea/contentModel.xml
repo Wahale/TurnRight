@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Whale\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Whale\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_TurnRight.604866795.00" t="ExcludeRecursive" />
+    <e p="F:\Проэкты\TurnRight" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="GUIPack-Clean&amp;Minimalist" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="BasicButton.cs" t="Include" />
+              <e p="Popup.cs" t="Include" />
+              <e p="PopupOpener.cs" t="Include" />
+              <e p="SceneTransition.cs" t="Include" />
+              <e p="SpriteSwapper.cs" t="Include" />
+              <e p="Tooltip.cs" t="Include" />
+              <e p="Transition.cs" t="Include" />
+              <e p="Utils.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="CollisionController.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
+          <e p="GUI.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="InputController.cs" t="Include" />
+            <e p="MovementController.cs" t="Include" />
+          </e>
+          <e p="SaveAndLoad.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="TurnRight.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
