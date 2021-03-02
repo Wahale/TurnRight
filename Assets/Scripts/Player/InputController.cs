@@ -8,6 +8,7 @@ public class InputController : MonoBehaviour
 
     [SerializeField] private KeyCode PCDebugKey;
     private MovementController movement;
+
     // Start is called before the first frame update
     void Start()
     {

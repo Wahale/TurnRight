@@ -17,7 +17,15 @@ public class MovementController : MonoBehaviour
     private float X;
     private float Y;
 
-    private void Start()
+    private int _turnCount;
+    private bool isTurn;
+
+    public int TurnCount {
+        get => _turnCount;
+        set => _turnCount = value;
+    }
+
+    private void Awake()
     {
         this.rb = GetComponent<Rigidbody2D>();
         this.Y = 1;
@@ -33,9 +41,14 @@ public class MovementController : MonoBehaviour
         if (dir > 0)
         {
             rb.rotation -= X * steering * (rb.velocity.magnitude / maxSpeed);
+            if (!isTurn)
+            {
+                TurnCount++;
+                isTurn = true;
+            }
         }
         else {
-            rb.rotation += X * steering * (rb.velocity.magnitude / maxSpeed);
+            isTurn = false;
         }
 
 
@@ -54,4 +67,18 @@ public class MovementController : MonoBehaviour
     public void SetX(float value) => this.X = value;
 
     public void IncreaseMaxSpeed(float value) => this.maxSpeed += value;
+
+    public void ResetPlayer() {
+        if (this.rb != null)
+        {
+            this.rb.Sleep();
+            this.rb.WakeUp();
+            this.rb.velocity = new Vector2(0, 0);
+            this.rb.rotation = 0;
+            this.rb.transform.rotation = Quaternion.Euler(0, 0, 0);
+            this.rb.angularDrag = 0;
+            this.rb.angularVelocity = 0;
+        }
+        this.TurnCount = 0;
+    }
 }
