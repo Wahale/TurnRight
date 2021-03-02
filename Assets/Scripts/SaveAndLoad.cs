@@ -5,11 +5,11 @@ public class SaveAndLoad : MonoBehaviour
 {
     private string _path;
     private string data = "data.json";
-    private Save save;
+    private Save _save;
 
     private void Awake()
     {
-        this.save = new Save();
+        this._save = new Save();
 #if UNITY_ANDROID && !UNITY_EDITOR
         _path = Path.Combine(Application.persistentDataPath, data);
 #else
@@ -20,16 +20,16 @@ public class SaveAndLoad : MonoBehaviour
 
     public void SaveToFile()
     {
-        File.WriteAllText(_path, JsonUtility.ToJson(save));
+        File.WriteAllText(_path, JsonUtility.ToJson(_save));
     }
 
-    public Save GetSave() => this.save;
+    public Save GetSave() => this._save;
 
     private void LoadFromFile()
     {
         if (File.Exists(_path))
         {
-            save = JsonUtility.FromJson<Save>(File.ReadAllText(_path));
+            _save = JsonUtility.FromJson<Save>(File.ReadAllText(_path));
         }
     }
 

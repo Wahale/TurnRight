@@ -34,6 +34,7 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
+        if(!GUI.StartGame)return;
         Vector2 speed = transform.up * Y * speedIncrease;
         rb.AddForce(speed);
 

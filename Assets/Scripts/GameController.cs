@@ -71,12 +71,13 @@ public class GameController : MonoBehaviour
 
 
     public void StartNewGame(bool isAccelerationMode=false) {
+        GUI.StartGame = false;
         this.Lap = 0;
         this.Score = 0;
         this.Player.transform.position = this.StartPlayerPosition.transform.position;
         this.playerMovement.ResetPlayer();
         this.isAccelerateMode = isAccelerateMode;
-        SetGamePause(false);
+        //SetGamePause(false);
     }
 
     public void CallRestartGame()
@@ -109,6 +110,7 @@ public class GameController : MonoBehaviour
     }
 
     private void OnRoadCollision(Collision2D collision) {
+        StartNewGame();
         Debug.Log("GameIsOver!");
         MakeSave();
         GameEnd?.Invoke();
