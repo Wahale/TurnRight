@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private Text ScoreText;
     [SerializeField] private Text LapsText;
 
+
+    [SerializeField] private Sprite CurrentCarSprite;
     [SerializeField] private bool isAccelerateMode;
     [SerializeField] private float playerSpeedIncrease;
 
@@ -69,6 +71,9 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void SetNewCarSprite(Sprite carSprite) {
+        this.CurrentCarSprite = carSprite;
+    }
 
     public void StartNewGame(bool isAccelerationMode=false) {
         GUI.StartGame = false;
@@ -76,6 +81,7 @@ public class GameController : MonoBehaviour
         this.Score = 0;
         this.Player.transform.position = this.StartPlayerPosition.transform.position;
         this.playerMovement.ResetPlayer();
+        this.Player.GetComponent<SpriteRenderer>().sprite = this.CurrentCarSprite;
         this.isAccelerateMode = isAccelerateMode;
         //SetGamePause(false);
     }
