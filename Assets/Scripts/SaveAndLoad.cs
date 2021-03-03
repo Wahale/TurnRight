@@ -60,4 +60,6 @@ public class Save
 
     public bool SettingsVibration;
     public bool SettingsMusic;
+
+    public Sprite SelectedCar;
 }

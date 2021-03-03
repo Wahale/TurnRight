@@ -73,6 +73,8 @@ public class GameController : MonoBehaviour
 
     public void SetNewCarSprite(Sprite carSprite) {
         this.CurrentCarSprite = carSprite;
+        this.saveAndLoad.GetSave().SelectedCar = carSprite;
+        this.saveAndLoad.SaveToFile();
     }
 
     public void StartNewGame(bool isAccelerationMode=false) {
