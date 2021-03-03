@@ -61,14 +61,10 @@ public class GameController : MonoBehaviour
         this.StartPoint.SetActive(true);
         this.HalfPoint.SetActive(false);
 
+        this.CurrentCarSprite = this.saveAndLoad.GetSave().SelectedCar;
+
         bool isAccelerate = PlayerPrefs.HasKey("GameMode")?(PlayerPrefs.GetInt("GameMode") == 1 ? true : false):false;
         StartNewGame(isAccelerate);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void SetNewCarSprite(Sprite carSprite) {
